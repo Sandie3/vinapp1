@@ -9,8 +9,28 @@ const Home = () => {
     return (
         <>
 
+
         <Header />
-        <h1>yo</h1>
+        
+
+        <div className="optionBox">
+            <h2>Our Wineries</h2>
+            <img src="https://i.imgur.com/Ef7QHv3.png" alt="Tilfældig Vin Mark" />
+        </div>
+        
+        <div className="optionBox">
+            <h2>TOM</h2>
+            <img src="https://i.imgur.com/CehHkqA.png" alt="Tilfældig Vin Mark" />
+        </div>
+
+        <div className="optionBox">
+            <h2>Book a taste</h2>
+            <img src="https://i.imgur.com/XvaW9F6.png" alt="Tilfældig Vin Mark" />
+        </div>
+
+
+
+        
         </>
     )
 }

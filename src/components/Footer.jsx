@@ -1,16 +1,27 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 const Footer = () => {
     return (
-        <div>
+        <Fragment>
+        <div className="footer">
+            
+            
+            <p>footer content</p>
 
-            <footer>
-                <p>footer info</p>
-            </footer>
+         </div>
+
+        <section className="footercontent">
+            <h1>info</h1>
+            <p>how it works</p>
+        
+        </section>
+
+           
 
         
-            
-        </div>
+        </Fragment>
+
+        
     )
 }
 

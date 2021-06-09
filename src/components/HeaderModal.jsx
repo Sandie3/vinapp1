@@ -1,21 +1,37 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { MenuContext } from "react-flexible-sliding-menu";
 
-const HeaderModal = () => {
+/* window.onclick = function(event) {
+  if (event.target == MenuContext) {
+    
+  }
+} */
+
+function Menu() {
+  const { closeMenu } = useContext(MenuContext);
+
   return (
-    <div>
-        {/* Modal Knap */}
-      <button id="myBtn">Open Modal</button>
+    <div className="Menu">
+      <Link to="/">
+        Home <br />
+      </Link>
+      <Link to="/wineries">
+        Wineries <br />
+      </Link>
+      <Link to="/about">
+        About <br />
+      </Link>
+      <Link to="/contact">
+        Contact <br />
+      </Link>
 
-        {/* The modal */}
-      <div id="myModal" class="modal">
-          {/* Modal content */}
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>Some text in the Modal..</p>
-        </div>
-      </div>
+      {/* 
+      <button onClick={closeMenu} className="CloseBtn">
+        <i class="fas fa-times"></i>
+      </button> */}
     </div>
   );
-};
+}
 
-export default HeaderModal;
+export default Menu;

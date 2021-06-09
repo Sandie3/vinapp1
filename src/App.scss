@@ -1,26 +1,392 @@
-@import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap'); /* font-family: 'Suez One', serif; */
-@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap'); /* font-family: 'Hind', sans-serif; */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+     v2.0 | 20110126
+     License: none (public domain)
+*/
 
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 
-.footer {
-    flex-shrink: 0;
-    text-align: center;
-    background-color: purple;
-    color: white;
+@import url("https://fonts.googleapis.com/css2?family=Suez+One&display=swap"); /* font-family: 'Suez One', serif; */
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap"); /* font-family: 'Hind', sans-serif; */
+
+body {
+    max-width: 428px;
+    height: auto;
+    // background-color: rgb(216, 216, 216);
+    margin: 0 auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* --------INPUT START---------- */
+
+input,
+select {
+    width: 150px;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #05fa5f;
+    box-shadow: 0 0 5px #05fa5f;
+}
+
+select:focus {
+    border-bottom-left-radius: 0px;
+}
+
+input:invalid {
+    border-color: #ff3400;
+    box-shadow: 0 0 5px #ff3400;
+}
+
+input[type="submit"] {
+    background: linear-gradient(180deg, #05fa5f 0%, rgb(255, 255, 255) 100%);
+    border: none;
+}
+
+#searchBarSelect {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+#headerSubmit {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    width: 100px;
+    height: 28px;
+}
+
+/* --------INPUT SLUT---------- */
+
+/* --------Nav Start------ */
+
+.Nav {
+    display: grid;
+    grid-template-columns: 0.1fr 1fr 0.1fr;
+    grid-template-rows: 1fr;
+
+    height: 50px;
+    width: 100%;
+
+    padding: 10px;
+    background-color: #762968;
+
+    img {
+        grid-column: 1/2;
+        grid-row: 1/-1;
+
+        height: 32px;
+    }
+}
+
+.primaryButton {
+    grid-column: 3/4;
+    grid-row: 1/-1;
+
+    background: transparent;
+    border: none;
+
+    i{
+        color: white;
+    }
+}
+
+.Menu{
+    margin: 20px;
+    background: whitesmoke;
+    padding: 20px;
+
+    a{
+        text-decoration: none;
+        color: black;
+        font-family: 'Hind', sans-serif;
+
+    }
 }
 
 
+/* --------Nav Slut ------ */
 
+/* Footer - START */
 
+.footer {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #762968;
+    width: 100%;
+    color: white;
+    height: 300px;
+}
 
+.footerlinks {
+    background-color: purple;
+}
 
+.footercontent {
+    background-color: green;
+}
 
+/* Footer - SLUT */
 
-
-
+/* Home - START */
 
 /* Header - START */
 
+header {
+    /* background-color: gray; */
+}
 
+.headerContainer {
+    /* background-color: darkgray; */
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    h2 {
+        position: relative;
+        top: 70px;
+        left: 0px;
+        color: white;
+        text-align: center;
+    }
+}
 
 /* Header - SLUT */
+
+.optionBox {
+    background-color: white;
+    padding: 0px 12px 0px 12px;
+    text-align: center;
+
+    img {
+        width: 100%;
+        height: 110px;
+        object-fit: cover;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border: purple solid 2px;
+    }
+    h2 {
+        position: relative;
+        top: 70px;
+        left: 0px;
+        color: white;
+        font-size: 40px;
+    }
+}
+
+.optionBox:nth-of-type(5) {
+    margin-bottom: 100px;
+}
+
+/* Home - SLUT */
+
+/* Wineries - START */
+
+.wineriesContainer {
+    display: grid;
+    grid-template:
+        "a" auto
+        "b" auto
+        "c" auto / 1fr;
+    padding: 20px;
+}
+
+.wineryOption:nth-of-type(1) {
+    grid-area: a;
+}
+.wineryOption:nth-of-type(2) {
+    grid-area: b;
+}
+.wineryOption:nth-of-type(3) {
+    grid-area: c;
+}
+
+.wineryOption {
+    width: 428px;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    img {
+        margin-top: 10px;
+        grid-column: 1/2;
+        grid-row: 1/-1;
+    }
+    .wineryOptionContent {
+        width: 190px;
+        margin-top: 15px;
+        grid-column: 2/-1;
+        grid-row: 1/-1;
+    }
+    h2 {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: 14px;
+    }
+    input[type="submit"] {
+        position: relative;
+        top: 60px;
+        left: 20px;
+
+    }
+} 
+
+.wineryOption:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 1px;
+    img {
+        margin-top: 10px;
+        grid-column: 2/-1;
+        grid-row: 1/-1;
+    }
+    .wineryOptionContent {
+        margin-top: 15px;
+        grid-column: 1/2;
+        grid-row: 1/-1;
+    }
+}
+
+/* Header - START */
+
+/* Header - SLUT */
+
+/* Wineries - SLUT */
