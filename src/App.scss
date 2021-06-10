@@ -400,8 +400,43 @@ header {
     }
 }
 
-/* Header - START */
-
-/* Header - SLUT */
-
 /* Wineries - SLUT */
+
+/* ---- Contact START ---- */
+
+.Contact{
+    
+    padding: 20px 50px;
+    
+    h1{
+        font-family: 'Suez One', serif;
+        font-size: 28px;
+        text-align: center;
+    }
+    
+    p{
+        font-family: "Hind", sans-serif;
+        font-size: 14px;
+    }
+
+    span{
+        color: red;
+    }
+
+    h3{
+        margin-bottom: 3px;
+    }
+
+    .dropDown{
+        margin-bottom: 22%;
+
+        .searchBarContainer{
+
+             #searchBarSelect {
+                border-radius: 5px;
+                }
+        }
+    }
+}
+
+/* ---- Contact SLUT ----- */
