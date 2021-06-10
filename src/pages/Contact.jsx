@@ -34,7 +34,7 @@ const Contact = () => {
                     <h3>Choose<span>*</span>:</h3>
                     <div className="searchBarContainer">
                         <select name="" id="searchBarSelect">
-                            <option value="0"><Link to={`${url}/message`}>Contact...</Link></option>
+                            <option value="0"><Link to={`${url}/message`}>Contact</Link></option>
                             <option value="1"><Link to={`${url}/booking`}>Booking</Link></option>
                             <option value="2"><Link to={`${url}/cancel`}>Cancel</Link></option>
                         </select>
@@ -45,7 +45,13 @@ const Contact = () => {
                     <Route exact path={path}>
                         <h3>Yo</h3>
                     </Route>
-                    <Route path={`${path}/:page`}>
+                    <Route path={`${path}/:message`}>
+                        <ContactOption />
+                    </Route>
+                    <Route path={`${path}/booking`}>
+                        <ContactOption />
+                    </Route>
+                    <Route path={`${path}/cancel`}>
                         <ContactOption />
                     </Route>
                 </Switch>
