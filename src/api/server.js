@@ -20,7 +20,8 @@ app.get('/', async (req, res) => {
 
 // ROUTES
 
-app.use('/api', require('./routes/todo.routes'))
+app.use('/booking', require('./routes/booking.routes'))
+app.use('/wineries', require('./routes/wineries.routes'))
 
 // DATABASE
 

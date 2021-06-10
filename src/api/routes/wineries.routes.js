@@ -1,4 +1,4 @@
-const Todo = require("../models/todo.model");
+const Todo = require("../models/wineries.model");
 const express = require("express");
 const router = express.Router();
 
@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
     }
 });
 
-router.get("/:todoid", async (req, res) => {
+router.get("/:vinid", async (req, res) => {
     try {
         const todo = await Todo.findById(req.params.todoid);
         res.status(200).json(todo);
@@ -37,7 +37,7 @@ router.post("/", async (req, res) => {
     }
 });
 
-router.put("/:todoid", async (req, res) => {
+router.put("/:vinid", async (req, res) => {
     if (JSON.stringify(req.body) === "{}") {
         return res.status(410).json({ message: "No data to edit" });
     }
@@ -57,7 +57,7 @@ router.put("/:todoid", async (req, res) => {
     }
 });
 
-router.delete("/:todoid", async (req, res) => {
+router.delete("/:vinid", async (req, res) => {
     try {
         let deleteTodo = await Todo.findByIdAndDelete(req.params.todoid);
         if (deleteTodo) {
