@@ -1,4 +1,4 @@
-const Todo = require("../models/wineries.model");
+const Vin = require("../models/wineries.model");
 const express = require("express");
 const router = express.Router();
 
@@ -7,8 +7,8 @@ router.use(formData.parse());
 
 router.get("/", async (req, res) => {
     try {
-        const todos = await Todo.find();
-        res.status(200).json(todos);
+        const vins = await Vin.find();
+        res.status(200).json(vins);
     } catch (error) {
         res.status(500).json({ message: "There was an error in" + error.message });
     }
@@ -16,8 +16,8 @@ router.get("/", async (req, res) => {
 
 router.get("/:vinid", async (req, res) => {
     try {
-        const todo = await Todo.findById(req.params.todoid);
-        res.status(200).json(todo);
+        const vin = await Vin.findById(req.params.vinid);
+        res.status(200).json(vin);
     } catch (error) {
         res.status(500).json({ message: "There was an error in" + error.message });
     }
@@ -26,11 +26,11 @@ router.get("/:vinid", async (req, res) => {
 router.post("/", async (req, res) => {
     console.log("request body: ", req.body);
     try {
-        let newtodo = new Todo(req.body);
-        await newtodo.save();
+        let newVin = new Vin(req.body);
+        await newVin.save();
         res
             .status(201)
-            .json({ message: "Der er oprettet en ny todo", created: newtodo });
+            .json({ message: "Der er oprettet en ny todo", created: newVin });
     } catch (err) {
         console.log("ERROR ", err);
         res.status(400).json({ ERROR: "There was an error" });
@@ -43,13 +43,13 @@ router.put("/:vinid", async (req, res) => {
     }
 
     try {
-        let editTodo = await Todo.findByIdAndUpdate(req.params.todoid, req.body, {
+        let editVin = await Vin.findByIdAndUpdate(req.params.vinid, req.body, {
             new: true,
         });
-        if (editTodo) {
-            res.status(200).json({ message: "Todo is edited", edited: editTodo });
+        if (editVin) {
+            res.status(200).json({ message: "Todo is edited", edited: editVin });
         } else {
-            res.status(410).json({ message: "Nothing was edited", edited: editTodo });
+            res.status(410).json({ message: "Nothing was edited", edited: editVin });
         }
     } catch (err) {
         console.log("ERROR", err);
@@ -59,13 +59,13 @@ router.put("/:vinid", async (req, res) => {
 
 router.delete("/:vinid", async (req, res) => {
     try {
-        let deleteTodo = await Todo.findByIdAndDelete(req.params.todoid);
-        if (deleteTodo) {
-            res.status(200).json({ message: "Todo is deleted", deleted: deleteTodo });
+        let deleteVin = await Vin.findByIdAndDelete(req.params.vinid);
+        if (deleteVin) {
+            res.status(200).json({ message: "Todo is deleted", deleted: deleteVin });
         } else {
             res
                 .status(410)
-                .json({ message: "Nothing got deleted", deleted: deleteTodo });
+                .json({ message: "Nothing got deleted", deleted: deleteVin });
         }
     } catch (err) {
         console.log("ERROR", err);
