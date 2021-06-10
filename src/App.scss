@@ -214,24 +214,40 @@ input[type="submit"] {
     background: transparent;
     border: none;
 
-    i{
+    i {
         color: white;
     }
 }
 
-.Menu{
-    margin: 20px;
+.Menu {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 0.5fr;
+    grid-template-rows: 50px 400px;
+
     background: whitesmoke;
-    padding: 20px;
 
-    a{
-        text-decoration: none;
-        color: black;
-        font-family: 'Hind', sans-serif;
+    #NavC {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        background-color: #762968;
 
+        img {
+            height: 32px;
+            margin: 10px;
+        }
+    }
+    #NavLinks {
+        grid-column: 2/3;
+        grid-row: 2/-1;
+        margin-top: 12%;
+        a { 
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            font-family: "Hind", sans-serif;
+        }
     }
 }
-
 
 /* --------Nav Slut ------ */
 
@@ -364,9 +380,8 @@ header {
         position: relative;
         top: 60px;
         left: 20px;
-
     }
-} 
+}
 
 .wineryOption:nth-of-type(2) {
     display: grid;
