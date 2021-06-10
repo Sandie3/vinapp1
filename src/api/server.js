@@ -27,7 +27,7 @@ app.use('/wineries', require('./routes/wineries.routes'))
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/api', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, serverSelectionTimeoutMS: 5000, connectTimeoutMS: 10000 })
+mongoose.connect('mongodb://localhost/', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, serverSelectionTimeoutMS: 5000, connectTimeoutMS: 10000 })
     .catch((error) => console.error(error))
 const db = mongoose.connection;
 // db.on('error', (error) => console.error(error));

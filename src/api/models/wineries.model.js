@@ -27,4 +27,4 @@ const vinScheme = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Vinapp', vinScheme, 'wineries')
+module.exports = mongoose.model('Vinapp2', vinScheme, 'wineries')

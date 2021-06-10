@@ -27,4 +27,4 @@ const bookingScheme = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Vinapp', bookingScheme, 'bookings')
+module.exports = mongoose.model('Vinapp1', bookingScheme, 'bookings')
