@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 import Wineries from "./pages/Wineries";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Admin from "./pages/Admin"
 
 const App = () => {
     return (
@@ -35,6 +36,9 @@ const App = () => {
                     </Route>
                     <Route exact path="/contact">
                         <Contact />
+                    </Route>
+                    <Route exact path="/admin">
+                        <Admin />
                     </Route>
                 </Switch>
                 <Footer />
