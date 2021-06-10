@@ -1,4 +1,7 @@
-import React from 'react'
+import { Switch, Route } from 'react'
+import { Link } from 'react-router-dom'
+
+import { postBooking } from '../apicall/bookings'
 
 const Contact = () => {
     return (
@@ -23,6 +26,9 @@ const Contact = () => {
                     </select>
                 </div>
             </div>
+            <Switch>
+                <Route></Route>
+            </Switch>
         </div>
     )
 }
