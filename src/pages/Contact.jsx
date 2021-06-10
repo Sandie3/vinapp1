@@ -1,5 +1,11 @@
-import { Switch, Route, Fragment } from 'react'
-import { BrowserRouter, Link } from 'react-router-dom'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useParams,
+    useRouteMatch
+  } from "react-router-dom";
 
 import { postBooking } from '../apicall/bookings'
 
@@ -9,10 +15,10 @@ const Contact = () => {
 
     let { path, url } = useRouteMatch();
     
-    
+    console.log(path, url)
     
     return (
-        <Router>
+        <>
             <div className="Contact">
                 <h1>Contact Information</h1><br /><br />
 
@@ -30,18 +36,21 @@ const Contact = () => {
                         <select name="" id="searchBarSelect">
                             <option value="0"><Link to={`${url}/message`}>Contact...</Link></option>
                             <option value="1"><Link to={`${url}/booking`}>Booking</Link></option>
-                            <option value="2"><Link to={`${url}/cancel`}>Cancel</Link>Cancel</option>
+                            <option value="2"><Link to={`${url}/cancel`}>Cancel</Link></option>
                         </select>
                     </div>
 
                 </div>
                 <Switch>
+                    <Route exact path={path}>
+                        <h3>Yo</h3>
+                    </Route>
                     <Route path={`${path}/:page`}>
-                        <stuff />
+                        <ContactOption />
                     </Route>
                 </Switch>
             </div>
-        </Router>
+        </>
     )
 }
 
