@@ -18,7 +18,6 @@ const App = () => {
     return (
         <Router>
             <div>
-
             
             <MenuProvider MenuComponent={Menu} width={"250px"}>
                 <Nav />
