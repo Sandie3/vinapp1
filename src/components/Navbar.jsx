@@ -13,7 +13,7 @@ const Navbar = () => {
       <img src={Logo} alt="Logo" />
 
       <button onClick={toggleMenu} className="primaryButton">
-        <i class="fas fa-bars fa-2x"></i>
+        <i className="fas fa-bars fa-2x"></i>
       </button>
 
     </div>
