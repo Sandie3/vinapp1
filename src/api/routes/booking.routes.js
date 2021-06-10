@@ -30,7 +30,7 @@ router.post("/", async (req, res) => {
         await newBook.save();
         res
             .status(201)
-            .json({ message: "Der er oprettet en ny todo", created: newBook });
+            .json({ message: "Der er oprettet en ny booking", created: newBook });
     } catch (err) {
         console.log("ERROR ", err);
         res.status(400).json({ ERROR: "There was an error" });
