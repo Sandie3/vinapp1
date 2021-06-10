@@ -1,0 +1,28 @@
+###
+GET http://localhost:5001/
+
+
+###
+GET http://localhost:5001/api
+
+###
+GET http://localhost:5001/api/60a785e55d714c5f14bf1dea
+
+###
+POST http://localhost:5001/api
+content-type: application/json
+{
+    "title": "title",
+    "todo": "todo"
+}
+
+###
+DELETE http://localhost:5001/api/60a62400561dad4d00bb0295
+
+###
+PUT http://localhost:50001/api/60a62400561dad4d00bb0295
+content-type: application/json
+{
+    "title": "title2",
+    "todo": "todo2"
+}
