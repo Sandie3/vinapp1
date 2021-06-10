@@ -31,7 +31,7 @@ function Menu() {
           Contact  <br/> <hr/> <br/>
         </Link>
         <Link to="/admin">
-          Contact  <br/> <hr/> <br/>
+          Admin  <br/> <hr/> <br/>
         </Link>
       </div>
       {/* 
