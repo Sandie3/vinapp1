@@ -27,6 +27,23 @@ const Contact = () => {
                     </div>
 
                 </div>
+<<<<<<< Updated upstream
+=======
+                <Switch>
+                    <Route exact path={path}>
+                        <h3>Yo</h3>
+                    </Route>
+                    <Route path={`${path}/message`}>
+                        <ContactOption />
+                    </Route>
+                    <Route path={`${path}/booking`}>
+                        <ContactOption />
+                    </Route>
+                    <Route path={`${path}/cancel`}>
+                        <ContactOption />
+                    </Route>
+                </Switch>
+>>>>>>> Stashed changes
             </div>
         </>
     )
