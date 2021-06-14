@@ -1,21 +1,7 @@
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    useParams,
-    useRouteMatch
-  } from "react-router-dom";
-
-import { postBooking } from '../apicall/bookings'
-
 import ContactOption from '../components/OptionContact'
 
 const Contact = () => {
 
-    let { path, url } = useRouteMatch();
-    
-    console.log(path, url)
     
     return (
         <>
@@ -34,27 +20,13 @@ const Contact = () => {
                     <h3>Choose<span>*</span>:</h3>
                     <div className="searchBarContainer">
                         <select name="" id="searchBarSelect">
-                            <option value="0"><Link to={`${url}/message`}>Contact</Link></option>
-                            <option value="1"><Link to={`${url}/booking`}>Booking</Link></option>
-                            <option value="2"><Link to={`${url}/cancel`}>Cancel</Link></option>
+                            <option value="0">Contact</option>
+                            <option value="1">Booking</option>
+                            <option value="2">Cancel</option>
                         </select>
                     </div>
 
                 </div>
-                <Switch>
-                    <Route exact path={path}>
-                        <h3>Yo</h3>
-                    </Route>
-                    <Route path={`${path}/:message`}>
-                        <ContactOption />
-                    </Route>
-                    <Route path={`${path}/booking`}>
-                        <ContactOption />
-                    </Route>
-                    <Route path={`${path}/cancel`}>
-                        <ContactOption />
-                    </Route>
-                </Switch>
             </div>
         </>
     )
