@@ -1,9 +1,23 @@
-const Vin = require("../models/wineries.model");
 const express = require("express");
 const router = express.Router();
+const Vin = require("../models/wineries.model");
 
-const formData = require("express-form-data");
-router.use(formData.parse());
+const multer = require( 'multer' );
+const upload = multer( {
+
+    storage: multer.diskStorage( {
+        destination: function ( req, file, cb ) {
+            cb( null, 'public/images' );
+        },
+        filename: function ( req, file, cb ) {
+            //cb(null, Date.now() + '-' + file.originalname)
+            cb( null, file.originalname )
+        }
+    } )
+} );
+
+// const formData = require("express-form-data");
+// router.use(formData.parse());
 
 router.get("/", async (req, res) => {
     try {
@@ -23,11 +37,12 @@ router.get("/:vinid", async (req, res) => {
     }
 });
 
-router.post("/admin", upload.single( 'image' ), async (req, res) => {
+router.post("/", upload.single( 'image' ), async (req, res) => {
     console.log("request body: ", req.body);
+    let newVin
     try {
-        let newVin = new Vin(req.body);
-        newVin.image = req.file ? req.file.filename : NULL;
+        newVin = new Vin(req.body);
+        newVin.image = req.file ? req.file.filename : '404.jpg';
         await newVin.save();
         res.status(201).json({ message: "Der er oprettet en ny vin gaard", created: newVin });
     } catch (err) {
