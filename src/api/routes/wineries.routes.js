@@ -23,14 +23,13 @@ router.get("/:vinid", async (req, res) => {
     }
 });
 
-router.post("/", async (req, res) => {
+router.post("/admin", upload.single( 'image' ), async (req, res) => {
     console.log("request body: ", req.body);
     try {
         let newVin = new Vin(req.body);
+        newVin.image = req.file ? req.file.filename : NULL;
         await newVin.save();
-        res
-            .status(201)
-            .json({ message: "Der er oprettet en ny vin gaard", created: newVin });
+        res.status(201).json({ message: "Der er oprettet en ny vin gaard", created: newVin });
     } catch (err) {
         console.log("ERROR ", err);
         res.status(400).json({ ERROR: "There was an error" });
