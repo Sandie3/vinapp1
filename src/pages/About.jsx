@@ -2,7 +2,7 @@ import React from 'react'
 
 const About = () => {
     return (
-        <fraction>
+        <>
 
         <section className="vinmark"> <img src="https://i.imgur.com/Nt5qlMR.png" alt="vino billede?" /> 
         </section>
@@ -33,7 +33,7 @@ const About = () => {
 
 
 
-        </fraction>
+        </>
     )
 }
 
