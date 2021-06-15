@@ -5,11 +5,11 @@ const vinScheme = new mongoose.Schema({
         type: String,
         required: true
     },
-    choordx: {
+    coordx: {
         type: String,
         required: true
     },
-    choordy: {
+    coordy: {
         type: String,
         required: true
     },
