@@ -3,6 +3,8 @@ import { Route, Switch } from "react-router-dom";
 import { BrowserRouter as Router } from 'react-router-dom'
 import MenuProvider from 'react-flexible-sliding-menu';
 
+
+
 import Nav from './components/Navbar'
 import Menu from './components/HeaderModal'
 import Footer from "./components/Footer";
