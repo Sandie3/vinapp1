@@ -26,8 +26,6 @@ app.use('/wineries', require('./routes/wineries.routes'))
 // DATABASE
 
 const mongoose = require('mongoose');
-// mongodb+srv://user:<password>@cluster0.fudsm.mongodb.net/test
-// mongoose.connect('mongodb+srv://user:Passw0rd@cluster0.fudsm.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, serverSelectionTimeoutMS: 5000, connectTimeoutMS: 10000 })
 mongoose.connect('mongodb+srv://user:Passw0rd123@cluster0.fudsm.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, serverSelectionTimeoutMS: 5000, connectTimeoutMS: 10000 })
     .catch((error) => console.error(error))
 const db = mongoose.connection;
