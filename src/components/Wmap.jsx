@@ -17,20 +17,17 @@ const Wmap = (props) => {
   }, [] ) //Empty means load on page lead
 
 
-
-  // When weather is loaded then get coords for map
   useEffect(() => {
-    // If there is weather then get coords from weather data for map
-    if (props.cords) {
-      changeView(props.cords)
+    if (props.cord) {
+      changeView(props.cord)
     }
-  }, [ props.cords ])
+  }, [ props.cord ])
   
 
 
   return (
     <>
-      <div id="mapcontainer" style={{height: 400 + "px", backgroundColor: "silver"}}></div>
+      <div id="mapcontainer" style={{height: 350 + "px", backgroundColor: "silver"}}></div>
     </>
   )
 }

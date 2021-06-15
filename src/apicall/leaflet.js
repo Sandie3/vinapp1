@@ -4,8 +4,7 @@ import L from 'leaflet';
 let mymap;
 
 // Create map
-export const createMap = ( cord = [ 0, 0 ] ) => {
-    // let cord = [ 56, 10 ];
+export const createMap = ( cord = [ 0, 0 ]) => {
     mymap = L.map('mapcontainer').setView(cord, 4);
 
     L.tileLayer(
@@ -22,5 +21,5 @@ export const delMap = () => {
 
 // Change map position
 export const changeView = (cord) => {
-    mymap.setView(cord, 4.5)
+    mymap.setView(cord, 4)
 }
