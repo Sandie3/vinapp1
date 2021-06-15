@@ -15,7 +15,7 @@ const Contact = () => {
 
                 Christian Kirkegaard:<br />
                 ck@bookvino.com<br />
-                Mobile: +45 29 87 57 22<br /><br /> 
+                Mobile: +45 29 87 57 22<br /><br />
                 </p>
                 <div className="dropDown">
                     <h3>Choose<span>*</span>:</h3>
