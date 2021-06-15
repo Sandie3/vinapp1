@@ -4,9 +4,8 @@ import L from 'leaflet';
 let mymap;
 
 // Create map
-export const createMap = ( cord = [ 0, 0 ]) => {
-    mymap = L.map('mapcontainer').setView(cord, 4);
-
+export const createMap = ( cord = [ 0, 0 ], zoom = 5) => {
+    mymap = L.map('mapcontainer').setView(cord, zoom);
     L.tileLayer(
         'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
         { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors' }
@@ -20,6 +19,6 @@ export const delMap = () => {
 }
 
 // Change map position
-export const changeView = (cord) => {
-    mymap.setView(cord, 4)
+export const changeView = (cord, zoom) => {
+    mymap.setView(cord, zoom)
 }

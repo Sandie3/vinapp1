@@ -19,7 +19,7 @@ const Wmap = (props) => {
 
   useEffect(() => {
     if (props.cord) {
-      changeView(props.cord)
+      changeView(props.cord, props.zoom)
     }
   }, [ props.cord ])
   

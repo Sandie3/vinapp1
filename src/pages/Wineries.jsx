@@ -3,11 +3,12 @@ import { useState, useEffect } from 'react'
 import Wmap from '../components/Wmap'
 import { getWinerie } from '../apicall/wineries'
 
-const Wineries = (prop) => {
+const Wineries = () => {
 
     const [win, setWin] = useState()
     const [error, setError] = useState()
-    const [zoom, setZoom] = useState()
+    const [zoom, setZoom] = useState(5)
+    const [coords, setCoords] = useState([41,14])
 
     useEffect(() => {
         getWinerie().then(data => {
@@ -20,37 +21,33 @@ const Wineries = (prop) => {
             console.log(err)
         })
     }, [])
-
-    if (typeof zoom == 'undefined') return setZoom(5);
     
     return (
         <>
         {
             win &&
             <>
-            
-            
-            <header>
-                <Wmap cord={ [ win[0].coordy, win[0].coordx ] } zoom={zoom} />
-            </header>
-
-            <main className="wineriesContainer">
-                {
-                    win.map((w, i) => {
-                        return(
-                            <section className="wineryOption" key={w._id}>
-                                <img src="https://i.imgur.com/nt1WAkC.png" alt="Picture of the Winery" />
-                                <div className="wineryOptionContent">
-                                    <h2>Name: {w.name}</h2>
-                                    <h3>Country: {w.location}</h3>
-                                    <p>{w.description}</p>
-                                    <input type="submit" value="See on map" />
-                                </div>
-                            </section>
-                        )
-                    })
-                }
-            </main>
+                <header>
+                    <Wmap cord={coords} zoom={zoom} />
+                </header>
+                <main className="wineriesContainer">
+                    {
+                        win.map((w, i) => {
+                            let cords = [w.coordy, w.coordx]
+                            return(
+                                <section className="wineryOption" key={w._id}>
+                                    <img src="https://i.imgur.com/nt1WAkC.png" alt="Picture of the Winery" />
+                                    <div className="wineryOptionContent">
+                                        <h2>Name: {w.name}</h2>
+                                        <h3>Country: {w.location}</h3>
+                                        <p>{w.description}</p>
+                                        <button type="submit" onSubmit={( e ) => {setCoords(cords); setZoom(13)}} value="See on map" >See on map</button>
+                                    </div>
+                                </section>
+                            )
+                        })
+                    }
+                </main>
             </>
         }
         {
