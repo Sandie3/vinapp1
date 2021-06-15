@@ -1,8 +1,6 @@
-import React from 'react'
-
 const OptionContact = () => {
-    return (
-        <div className="OptionContact">
+return (
+    <div className="OptionContact">
             <div className="contactText">
                 <h3>Name<span>*</span>:</h3> <br />
                 <input type="text" placeholder="Write your name..." /><br /><br />
@@ -22,4 +20,4 @@ const OptionContact = () => {
     )
 }
 
-export default OptionContact
+export default OptionContact;

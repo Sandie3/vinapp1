@@ -1,7 +1,8 @@
-import ContactOption from '../components/OptionContact'
+import { useState, useEffect } from 'react'
+
+import OptionContact from '../components/OptionContact'
 
 const Contact = () => {
-
     
     return (
         <>
@@ -14,7 +15,7 @@ const Contact = () => {
 
                 Christian Kirkegaard:<br />
                 ck@bookvino.com<br />
-                Mobile: +45 29 87 57 22<br /><br /> 
+                Mobile: +45 29 87 57 22<br /><br />
                 </p>
                 <div className="dropDown">
                     <h3>Choose<span>*</span>:</h3>
@@ -25,7 +26,8 @@ const Contact = () => {
                             <option value="2">Cancel</option>
                         </select>
                     </div>
-
+                </div>
+                <div>
                 </div>
             </div>
         </>

@@ -1,10 +1,12 @@
 import React from 'react'
 
+import Wmap from '../components/Wmap'
+
 const Wineries = () => {
     return (
         <>
         <header>
-            <img src="https://i.imgur.com/GPARBvt.png" alt="Maps billede?" />
+            <Wmap cords={ [ 41.8829917,12.4001084 ] } />
         </header>
 
         <main className="wineriesContainer">
