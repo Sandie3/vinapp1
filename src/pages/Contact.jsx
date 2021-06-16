@@ -5,6 +5,22 @@ import Bookings from "../components/Bookings";
 import OptionContact from "../components/OptionContact";
 import Cancel from "../components/Cancel";
 
+const customStyles = {
+    container: (provided) => ({
+        ...provided,
+        width: '90%',
+        margin: '0 auto',
+    }),
+    menu: (provided) => ({
+        ...provided,
+        width: '100%',
+        padding: 20,
+    }),
+    option: (provided) => ({
+        ...provided,
+        padding: 10
+    })
+}
 
 const options = [
     { value: <OptionContact />, label: 'Contact' },
@@ -33,6 +49,7 @@ const Contact = () => {
                     <h3>Choose<span>*</span>:</h3>
                     <div className="searchBarContainer">
                         <Select
+                            styles={customStyles}
                             defaultValue={selectedOption}
                             onChange={setSelectedOption}
                             options={options}

@@ -772,4 +772,23 @@ footer {
     background-color: white;
     height:auto;
     width:100%;
+    /* --------Bookings-------- */
+    .adminSearch{
+        width: 340px;
+        height: 56px;
+        border: 1px solid black;
+        font-size: 23px;
+        display: block;
+        margin: 20px auto;
+    }
+    .adminBookings{
+        .adminBook{
+            width: 340px;
+            height: 155px;
+            background-color: #A20E87;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+    }
 }
