@@ -33,6 +33,9 @@ function Menu() {
         <Link to="/admin">
           Admin  <br/> <hr/> <br/>
         </Link>
+        <Link to="/bookings">
+          Bookings  <br/> <hr/> <br/>
+        </Link>
       </div>
       {/* 
       <button onClick={closeMenu} className="CloseBtn">
