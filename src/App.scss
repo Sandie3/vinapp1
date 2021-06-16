@@ -775,7 +775,7 @@ footer {
     /* --------Bookings-------- */
     .adminSearch{
         width: 340px;
-        height: 56px;
+        height: auto;
         border: 1px solid black;
         font-size: 23px;
         display: block;
@@ -784,11 +784,31 @@ footer {
     .adminBookings{
         .adminBook{
             width: 340px;
-            height: 155px;
+            height: auto;
             background-color: #A20E87;
             display: block;
             margin: 20px auto;
             border-radius: 10px;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 15px;
+            input{
+                height: 28px;
+                width: 100%;
+            }
+            button{
+                height: 28px;
+                width: 28px;
+            }
+            .adminBookingNR{grid-column: 1/2;grid-row: 1/2;}
+            .adminEmail{grid-column: 1/2;grid-row: 2/3;}
+            .adminName{grid-column: 1/2;grid-row: 3/4;}
+            .adminDate{grid-column: 2/-1;grid-row: 2/3;}
+            .adminPhoneNR{grid-column: 2/-1;grid-row: 3/4;}
+            .adminEditBooking{grid-column: 2/3;grid-row: 1/2;justify-self: center;}
+            .adminDelBooking{grid-column: 3/4;grid-row: 1/2;justify-self: center;}
         }
     }
 }
