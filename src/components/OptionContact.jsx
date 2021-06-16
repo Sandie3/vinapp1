@@ -7,7 +7,7 @@ return (
                 <h3>Email<span>*</span>:</h3>
                 <input type="text" placeholder="Write your Email..." /><br /><br />
                 <h3>Phone<span>*</span>:</h3>
-                <input type="text" placeholder="Write your phone number..." />
+                <input type="text" placeholder="Write your number..." />
             </div>
             <div className="contactTextArea">
                 <h3>Message<span>*</span>:</h3>
