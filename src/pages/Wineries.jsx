@@ -10,7 +10,12 @@ const Wineries = () => {
     const [zoom, setZoom] = useState(5)
     const [coords, setCoords] = useState([41,14])
 
-    useEffect(() => {
+    const getWin = () => {
+        window.scrollTo({
+            top: 0,
+            screenLeft: 0,
+            behavior: 'smooth'
+        })
         getWinerie().then(data => {
             setWin(data)
             setError()
@@ -20,14 +25,18 @@ const Wineries = () => {
             setWin()
             console.log(err)
         })
-    }, [])
+    }
+    
+    useEffect(() => {
+        getWin();
+    }, [coords])
     
     return (
         <>
         {
             win &&
             <>
-                <header>
+                <header id="mapCard">
                     <Wmap cord={coords} zoom={zoom} />
                 </header>
                 <main className="wineriesContainer">
@@ -41,7 +50,7 @@ const Wineries = () => {
                                         <h2>Name: {w.name}</h2>
                                         <h3>Country: {w.location}</h3>
                                         <p>{w.description}</p>
-                                        <button type="submit" onSubmit={( e ) => {setCoords(cords); setZoom(13)}} value="See on map" >See on map</button>
+                                        <input type="submit" onClick={ ( e ) => { setCoords(cords); setZoom(17) } } value="See on map" />
                                     </div>
                                 </section>
                             )
