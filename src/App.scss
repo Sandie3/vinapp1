@@ -368,14 +368,26 @@ input[type="submit"] {
     p {
         font-size: 14px;
     }
-    input[type="submit"] {
-        position: relative;
-        top: 60px;
-        left: 20px;
-    }
 }
 
-.wineryOption:nth-of-type(2) {
+// .wineryOption:nth-of-type(2) {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     grid-template-rows: 1fr;
+//     padding: 1px;
+//     img {
+//         margin-top: 10px;
+//         grid-column: 2/-1;
+//         grid-row: 1/-1;
+//     }
+//     .wineryOptionContent {
+//         margin-top: 15px;
+//         grid-column: 1/2;
+//         grid-row: 1/-1;
+//     }
+// }
+
+.wineryOption:nth-child(even){
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
@@ -389,6 +401,9 @@ input[type="submit"] {
         margin-top: 15px;
         grid-column: 1/2;
         grid-row: 1/-1;
+        .findWin{
+            
+        }
     }
 }
 
@@ -636,4 +651,60 @@ input[type="submit"] {
 
 
     /* ---- Cancel slut ----- */
+}
+
+footer{
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content;
+    .col1{
+        background-color: #762968;
+        width: 100%;
+        height: 25px;
+    }
+    .col2{
+        background-color: #B940A2;
+        width: 100%;
+        height: 10px;
+    }
+    .fooLogo{
+        max-width: 70px;
+        margin-top: 10px;
+        justify-self: center;
+    }
+    .fooLinks{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 20px;
+        width: 300px;
+        margin-top: 20px;
+        text-align: center;
+        align-self: center;
+        justify-self: center;
+        a{
+            color: black;
+            text-decoration: none;
+        }
+    }
+    .socials{
+        align-self: center;
+        justify-self: center;
+        margin-top: 20px;
+        img{
+            display: inline-block;
+            max-width: 60px;
+            border-radius: 10px;
+            margin: 5px;
+        }
+    }
+    .copy{
+        color: black;
+        text-decoration: none;
+        justify-self: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }
