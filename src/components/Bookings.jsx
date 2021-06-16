@@ -35,7 +35,10 @@ const Bookings = () => {
             <div className="kalender">
                 <Calendar onChange={onChange} value={date} />
             </div>
-        
+            <div className="checkboxBook">
+                <input type="checkbox" id="checkBooking" />
+                <label htmlFor="checkBooking">Are you sure you want to book this date?</label>
+            </div>
             <div className="bookOptionSubmit">
                 <input type="submit" id="OptionSubmit" value="Book" />
             </div>
