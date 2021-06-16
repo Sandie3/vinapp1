@@ -50,7 +50,7 @@ const Wineries = () => {
                                         <h2>Name: {w.name}</h2>
                                         <h3>Country: {w.location}</h3>
                                         <p>{w.description}</p>
-                                        <input type="submit" onClick={ ( e ) => { setCoords(cords); setZoom(17) } } value="See on map" />
+                                        <input className="findWin" type="submit" onClick={ ( e ) => { setCoords(cords); setZoom(17) } } value="See on map" />
                                     </div>
                                 </section>
                             )
