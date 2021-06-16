@@ -16,6 +16,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Admin from "./pages/Admin"
 import Bookings from "./components/Bookings"
+import OptionContact from "./components/OptionContact"
 
 const App = () => {
     return (
@@ -44,6 +45,9 @@ const App = () => {
                     </Route>
                     <Route exact path="/bookings">
                         <Bookings />
+                    </Route>
+                    <Route exact path="/OptionContact">
+                        <OptionContact />
                     </Route>
                 </Switch>
                 <Footer />
