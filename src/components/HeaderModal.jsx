@@ -19,25 +19,19 @@ function Menu() {
       </div>
       <div id="NavLinks">
         <Link to="/">
-          Home     <br/> <hr/> <br/> 
+          Home     <br /> <hr /> <br />
         </Link>
         <Link to="/wineries">
-          Wineries <br/> <hr/> <br/>
+          Wineries <br /> <hr /> <br />
         </Link>
         <Link to="/about">
-          About    <br/> <hr/> <br/>
+          About    <br /> <hr /> <br />
         </Link>
         <Link to="/contact">
-          Contact  <br/> <hr/> <br/>
+          Contact  <br /> <hr /> <br />
         </Link>
         <Link to="/admin">
-          Admin  <br/> <hr/> <br/>
-        </Link>
-        <Link to="/bookings">
-          Bookings  <br/> <hr/> <br/>
-        </Link>
-        <Link to="/OptionContact">
-        OptionContact  <br/> <hr/> <br/>
+          Admin  <br /> <hr /> <br />
         </Link>
       </div>
       {/* 
