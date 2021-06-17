@@ -22,7 +22,7 @@ const Footer = () => {
         <img src={Instagram} alt="Instagram" />
         <img src={Youtube} alt="youtube" />
       </div>
-      <a href="https://bookvino.com" target="_blank" className="copy" >Copyright &copy; bookvino.com {new Date().getFullYear()} All Rights Reserved</a>
+      <a href="https://bookvino.com" target="_blank" rel="noreferrer" className="copy" >Copyright &copy; bookvino.com {new Date().getFullYear()} All Rights Reserved</a>
     </footer>
   );
 };

@@ -18,7 +18,8 @@ const customStyles = {
     }),
     option: (provided) => ({
         ...provided,
-        padding: 10
+        padding: 10,
+        borderBottom: '1px solid grey'
     })
 }
 
