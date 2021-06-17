@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
+import L from 'leaflet'
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 
-import Wmap from '../components/Wmap'
+// import Wmap from '../components/Wmap'
 import { getWinerie } from '../apicall/wineries'
 
 const Wineries = () => {
@@ -9,6 +11,8 @@ const Wineries = () => {
     const [error, setError] = useState()
     const [zoom, setZoom] = useState(5)
     const [coords, setCoords] = useState([41,14])
+    const [name, setName] = useState()
+    const [location, setLocation] = useState()
 
     const getWin = () => {
         window.scrollTo({
@@ -30,14 +34,31 @@ const Wineries = () => {
     useEffect(() => {
         getWin();
     }, [coords])
-    
+
+    function ChangeView({ coord, zoom }) {
+        const map = useMap();
+        map.setView(coords, zoom);
+        return null;
+    }
     return (
         <>
         {
             win &&
             <>
                 <header id="mapCard">
-                    <Wmap cord={coords} zoom={zoom} />
+                    {/* <Wmap cord={coords} zoom={zoom} /> */}
+                    <MapContainer style={{height: 350 + "px"}} center={coords} zoom={zoom} scrollWheelZoom={false}>
+                        <TileLayer
+                            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        />
+                        <ChangeView center={coords} zoom={zoom} />
+                        <Marker position={coords}>
+                            <Popup>
+                                {name}<br /> {location}
+                            </Popup>
+                        </Marker>
+                    </MapContainer>
                 </header>
                 <main className="wineriesContainer">
                     {
@@ -50,7 +71,7 @@ const Wineries = () => {
                                         <h2>Name: {w.name}</h2>
                                         <h3>Country: {w.location}</h3>
                                         <p>{w.description}</p>
-                                        <input className="findWin" type="submit" onClick={ ( e ) => { setCoords(cords); setZoom(17) } } value="See on map" />
+                                        <input className="findWin" type="submit" onClick={ ( e ) => { setCoords(cords); setZoom(17); setName(w.name); setLocation(w.location); } } value="See on map" />
                                     </div>
                                 </section>
                             )

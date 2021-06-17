@@ -168,8 +168,9 @@ input:invalid {
 }
 
 input[type="submit"] {
-    background: linear-gradient(180deg, #05fa5f 0%, rgb(255, 255, 255) 100%);
+    background: linear-gradient(180deg, #00E554 0%, #70FFA5 100%);
     border: none;
+    color: white;
 }
 
 #searchBarSelect {
@@ -342,10 +343,11 @@ input[type="submit"] {
 
 .wineryOption {
     width: 428px;
-    height: 200px;
+    height: auto;
+    border-bottom: 1px solid black;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: auto;
     img {
         margin-top: 10px;
         grid-column: 1/2;
@@ -356,36 +358,24 @@ input[type="submit"] {
         margin-top: 15px;
         grid-column: 2/-1;
         grid-row: 1/-1;
-    }
-    h2 {
-        font-size: 20px;
-        margin-bottom: 5px;
-    }
-    h3 {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-    p {
-        font-size: 14px;
+        h2 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 14px;
+        }
+        .findWin{
+            margin: 5px 20px;
+            padding: 8px;
+            font-size: 14px;
+        }
     }
 }
-
-// .wineryOption:nth-of-type(2) {
-//     display: grid;
-//     grid-template-columns: 1fr 1fr;
-//     grid-template-rows: 1fr;
-//     padding: 1px;
-//     img {
-//         margin-top: 10px;
-//         grid-column: 2/-1;
-//         grid-row: 1/-1;
-//     }
-//     .wineryOptionContent {
-//         margin-top: 15px;
-//         grid-column: 1/2;
-//         grid-row: 1/-1;
-//     }
-// }
 
 .wineryOption:nth-child(even) {
     display: grid;

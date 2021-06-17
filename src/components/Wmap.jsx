@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 
 
-import { createMap, delMap, changeView } from '../apicall/leaflet'
+import { createMap, delMap, changeView, changeMarker } from '../apicall/leaflet'
 
 
 const Wmap = (props) => {
@@ -20,6 +20,7 @@ const Wmap = (props) => {
   useEffect(() => {
     if (props.cord) {
       changeView(props.cord, props.zoom)
+      changeMarker(props.cord)
     }
   }, [ props.cord ])
   
