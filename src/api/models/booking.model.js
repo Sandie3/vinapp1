@@ -18,12 +18,13 @@ const bookingScheme = new mongoose.Schema({
         required: true
     },
     bookingDate: {
-        type: String,
+        type: Date,
+        default: Date.now,
         required: true
     },
     message: {
         type: String,
-        required: true
+        required: false
     }
 })
 

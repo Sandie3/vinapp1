@@ -6,22 +6,16 @@ import {postBooking} from "../apicall/bookings"
 
 const Bookings = () => {
 
-    const [date, setDate] = useState(new Date())
-
-    const onChange = () => {
-        setDate(date)
-    }
+    const [date, setDate] = useState(new Date());
 
     //state til svar fra api
     const [besked, setBesked] = useState()
     const [error, setError] = useState()
-    const [loader, setLoader] = useState(false)
 
     // Funktion som sender input til apikald (som sender til api'et)
     const handleSubmit = (e) => {
 
         e.preventDefault(); // forhindrer reload af siden 
-        setLoader(true)
 
         //pak todo ind i formdata til api
         const formdata = new FormData(e.target)
@@ -31,13 +25,10 @@ const Bookings = () => {
             setBesked(data);
             setError(); // tøm fejlbesked, hvis der har været en fejl og fejlen nu er løst
             e.target.reset()
-            setLoader(false)
         }).catch(err => {
             console.log(err)
             setError("Der er sket en fejl!")
             setBesked()
-            setLoader(false)
-
         })
     }
 
@@ -62,7 +53,11 @@ const Bookings = () => {
                     </select><br /><br />
                 </div>
                 <div className="kalender">
-                    <Calendar onChange={onChange} value={date} name="bookingDate"/>
+                    <Calendar 
+                        onChange={setDate} 
+                        value={date} 
+                        name="bookingDate"/>
+                        {console.log(date)}
                 </div>
                 <div className="checkboxBook">
                     <input type="checkbox" id="checkBooking" />
