@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import L from 'leaflet'
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, useMap, ZoomControl } from 'react-leaflet'
 
 // import Wmap from '../components/Wmap'
 import { getWinerie } from '../apicall/wineries'
@@ -47,12 +47,13 @@ const Wineries = () => {
             <>
                 <header id="mapCard">
                     {/* <Wmap cord={coords} zoom={zoom} /> */}
-                    <MapContainer style={{height: 350 + "px"}} center={coords} zoom={zoom} scrollWheelZoom={false}>
+                    <MapContainer style={{height: 350 + "px"}} center={coords} zoom={zoom} scrollWheelZoom={false} zoomControl={false}>
                         <TileLayer
                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
                         <ChangeView center={coords} zoom={zoom} />
+                        <ZoomControl position="topright" />
                         <Marker position={coords}>
                             <Popup>
                                 {name}<br /> {location}
