@@ -1,0 +1,14 @@
+
+GET http://localhost:5001/booking HTTP/1.1
+###
+POST http://localhost:5001/booking/admin HTTP/1.1
+content-type: application/json
+
+{
+    "name": "test",
+    "phone": "1234",
+    "email": "test",
+    "booking": "test",
+    "bookingDate": "test",
+    "message": "test"
+}

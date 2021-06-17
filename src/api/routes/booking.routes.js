@@ -23,7 +23,7 @@ router.get("/:bookid", async (req, res) => {
     }
 });
 
-router.post("/", async (req, res) => {
+router.post("/admin", async (req, res) => {
     console.log("request body: ", req.body);
     try {
         let newBook = new Book(req.body);
