@@ -19,7 +19,7 @@ const bookingScheme = new mongoose.Schema({
     },
     bookingDate: {
         type: String,
-        //default: Date.now,
+        default: Date.now,
         required: false
     },
     message: {
@@ -27,6 +27,11 @@ const bookingScheme = new mongoose.Schema({
         required: false
     },
     winerie: {
+        type: String,
+        required: true
+    },
+
+    Check: {
         type: String,
         required: true
     }
