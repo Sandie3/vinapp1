@@ -31,6 +31,7 @@ export const searchBooking = (bookingId) => {
 
 
 export const postBooking = (bookingData) => {
+    console.log("Et eller andet", bookingData)
     let response = axios.post(api.baseUrl + '/admin', bookingData)
         .then(res => { return res.data })
     return response;

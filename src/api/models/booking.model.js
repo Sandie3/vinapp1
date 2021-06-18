@@ -18,8 +18,8 @@ const bookingScheme = new mongoose.Schema({
         required: true
     },
     bookingDate: {
-        type: Date,
-        default: Date.now,
+        type: String,
+        //default: Date.now,
         required: true
     },
     message: {
