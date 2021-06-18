@@ -25,6 +25,10 @@ const bookingScheme = new mongoose.Schema({
     message: {
         type: String,
         required: false
+    },
+    winerie: {
+        type: String,
+        required: true
     }
 })
 

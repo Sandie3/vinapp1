@@ -14,13 +14,29 @@ router.get("/", async (req, res) => {
     }
 });
 
-router.get("/:bookid", async (req, res) => {
+router.get("/search/:bookid", async (req, res) => {
+
     try {
-        const book = await Book.findById(req.params.bookid);
-        res.status(200).json(book);
-    } catch (error) {
+        const bok = await Book.find( {
+            $or: [
+                { "name": { "$regex": req.params.bookid, "$options": "i" } },
+                { "booking": { "$regex": req.params.bookid, "$options": "i" } }
+            ]
+        } )
+
+        // res.json( bok );
+        res.status(200).json(bok);
+
+    } catch ( err ) {
         res.status(500).json({ message: "There was an error in" + error.message });
     }
+
+    // try {
+    //     const bok = await Book.findById(req.params.bookid);
+    //     res.status(200).json(bok);
+    // } catch (error) {
+    //     res.status(500).json({ message: "There was an error in" + error.message });
+    // }
 });
 
 router.post("/admin", async (req, res) => {
@@ -47,7 +63,7 @@ router.put("/:bookid", async (req, res) => {
             new: true,
         });
         if (editBook) {
-            res.status(200).json({ message: "Todo is edited", edited: editBook });
+            res.status(200).json({ message: "Booking is edited", edited: editBook });
         } else {
             res.status(410).json({ message: "Nothing was edited", edited: editBook });
         }
@@ -57,11 +73,11 @@ router.put("/:bookid", async (req, res) => {
     }
 });
 
-router.delete("/:bookid", async (req, res) => {
+router.delete("/admin/:bookid", async (req, res) => {
     try {
         let deleteBook = await Book.findByIdAndDelete(req.params.bookid);
         if (deleteBook) {
-            res.status(200).json({ message: "Todo is deleted", deleted: deleteBook });
+            res.status(200).json({ message: "Booking is deleted", deleted: deleteBook });
         } else {
             res
                 .status(410)

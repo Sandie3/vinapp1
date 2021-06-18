@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import {postBooking} from "../apicall/bookings"
@@ -11,6 +11,7 @@ const Bookings = () => {
     //state til svar fra api
     const [besked, setBesked] = useState()
     const [error, setError] = useState()
+    const [booking, setBooking] = useState()
 
     // Funktion som sender input til apikald (som sender til api'et)
     const handleSubmit = (e) => {
@@ -32,6 +33,23 @@ const Bookings = () => {
         })
     }
 
+    const getRandomInt = (min = 0, max = 100) => {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+    useEffect(() => {
+        generateRandom()
+    }, [])
+
+    const generateRandom = () => {
+		const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+		let number = '';
+		for (let i = 0; i < 12; i++) {
+			number += possible.charAt(getRandomInt(0, possible.length));
+		}
+		return setBooking(number);
+	}
+
     return (
         <div >
             <form onSubmit={handleSubmit} className="bookingOption">
@@ -40,13 +58,14 @@ const Bookings = () => {
                     <input type="text" placeholder="Write your name..." name="name"/><br /><br />
                     <h3>Email<span>*</span>:</h3>
                     <input type="text" placeholder="Write your Email..." name="email"/><br /><br />
+                    <input type="text" name="booking" value={booking} style={{display:'none'}} /><br /><br />
 
                 </div>
                 <div className="bookingChoose">
                     <h3>Phone<span>*</span>:</h3>
                     <input type="text" placeholder="Write your phone number..." name="phone"/><br /><br />
                     <h3>Choose winery<span>*</span>:</h3>
-                    <select name="Booking" id="selectBooking" name="booking">
+                    <select name="winerie" id="selectBooking">
                         <option value="0">Winery1</option>
                         <option value="1">Winery2</option>
                         <option value="2">Winery3</option>
