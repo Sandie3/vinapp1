@@ -15,9 +15,6 @@ import Wineries from "./pages/Wineries";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Admin from "./pages/Admin";
-import Bookings from "./components/Bookings";
-import OptionContact from "./components/OptionContact";
-import Cancel from "./components/Cancel";
 
 const App = () => {
     return (

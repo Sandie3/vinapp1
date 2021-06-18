@@ -6,13 +6,13 @@ const AdminWineries = () => {
         <>
             <div className="adminAddWin">
                 <form action="">
-                    <input type="text" name="" id="" placeholder="Winerie name" />
-                    <input type="text" name="" id="" placeholder="Location" />
-                    <input type="text" name="" id="" placeholder="Coord X" />
-                    <input type="text" name="" id="" placeholder="Coord Y" />
-                    <textarea name="" id="" placeholder="Description" ></textarea>
-                    <input type="file" name="" id="" placeholder="Upload image" />
-                    <i class="fas fa-file-upload fa-2x adUpIco"></i>
+                    <input type="text" name="name" placeholder="Winerie name" />
+                    <input type="text" name="location" placeholder="Location" />
+                    <input type="text" name="coordx" placeholder="Coord X" />
+                    <input type="text" name="coordy" placeholder="Coord Y" />
+                    <textarea name="description" placeholder="Description" ></textarea>
+                    <input type="file" name="image" placeholder="Upload image" />
+                    <i className="fas fa-file-upload fa-2x adUpIco"></i>
                     <button>Save</button>
                 </form>
             </div>
