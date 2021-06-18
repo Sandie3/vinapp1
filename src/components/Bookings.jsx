@@ -6,13 +6,17 @@ import {postBooking} from "../apicall/bookings"
 
 const Bookings = () => {
 
-    const [date, setDate] = useState(new Date());
     
-
+    
     //state til svar fra api
     const [besked, setBesked] = useState()
     const [error, setError] = useState()
     const [booking, setBooking] = useState()
+    const [date, setDate] = useState(new Date());
+
+    function onChange(nextValue) {
+        setDate(nextValue);
+    }
 
     // Funktion som sender input til apikald (som sender til api'et)
     const handleSubmit = (e) => {
@@ -59,6 +63,7 @@ const Bookings = () => {
                     <h3>Email<span>*</span>:</h3>
                     <input type="text" placeholder="Write your Email..." name="email"/><br /><br />
                     <input type="text" name="booking" value={booking} style={{display:'none'}} /><br /><br />
+                    <input type="text" name="bookingDate" value={date} style={{display:'none'}} /><br /><br />
 
                 </div>
                 <div className="bookingChoose">
@@ -73,10 +78,11 @@ const Bookings = () => {
                 </div>
                 <div className="kalender">
                     <Calendar 
-                        onChange={setDate} 
-                        value={date}
+                        onChange={onChange} 
+                        defaultValue={date}
+                        // returnValue="range"
                         minDate={new Date()}
-                        name="bookingDate"
+                        // name="bookingDate"
                         />
                         {console.log(date)}
                 </div>
