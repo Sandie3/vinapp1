@@ -1,8 +1,5 @@
 import { useState, useEffect } from 'react'
-import L from 'leaflet'
 import { MapContainer, TileLayer, Marker, Popup, useMap, ZoomControl } from 'react-leaflet'
-
-// import Wmap from '../components/Wmap'
 import { getWinerie } from '../apicall/wineries'
 
 const Wineries = () => {
@@ -46,7 +43,6 @@ const Wineries = () => {
             win &&
             <>
                 <header id="mapCard">
-                    {/* <Wmap cord={coords} zoom={zoom} /> */}
                     <MapContainer style={{height: 350 + "px"}} center={coords} zoom={zoom} scrollWheelZoom={false} zoomControl={false}>
                         <TileLayer
                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -67,7 +63,8 @@ const Wineries = () => {
                             let cords = [w.coordy, w.coordx]
                             return(
                                 <section className="wineryOption" key={w._id}>
-                                    <img src="https://i.imgur.com/nt1WAkC.png" alt="Picture of the Winery" />
+                                    <img src={"/images/" + w.image} alt="Picture of the Winery" />
+                                    <img src="/src/images/banana.jpg" alt="Picture of the Winery" />
                                     <div className="wineryOptionContent">
                                         <h2>Name: {w.name}</h2>
                                         <h3>Country: {w.location}</h3>

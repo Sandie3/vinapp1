@@ -37,14 +37,14 @@ router.get("/:vinid", async (req, res) => {
     }
 });
 
-router.post("/", upload.single( 'image' ), async (req, res) => {
+router.post("/admin", upload.single( 'image' ), async (req, res) => {
     console.log("request body: ", req.body);
-    let newVin
+    // let newVin;
     try {
         newVin = new Vin(req.body);
         newVin.image = req.file ? req.file.filename : '404.jpg';
         await newVin.save();
-        res.status(201).json({ message: "Der er oprettet en ny vin gaard", created: newVin });
+        res.status(201).json({ message: "Winerie was created", created: newVin });
     } catch (err) {
         console.log("ERROR ", err);
         res.status(400).json({ ERROR: "There was an error" });
@@ -61,7 +61,7 @@ router.put("/:vinid", async (req, res) => {
             new: true,
         });
         if (editVin) {
-            res.status(200).json({ message: "Todo is edited", edited: editVin });
+            res.status(200).json({ message: "Winerie is edited", edited: editVin });
         } else {
             res.status(410).json({ message: "Nothing was edited", edited: editVin });
         }
@@ -75,7 +75,7 @@ router.delete("/:vinid", async (req, res) => {
     try {
         let deleteVin = await Vin.findByIdAndDelete(req.params.vinid);
         if (deleteVin) {
-            res.status(200).json({ message: "Todo is deleted", deleted: deleteVin });
+            res.status(200).json({ message: "Winerie is deleted", deleted: deleteVin });
         } else {
             res
                 .status(410)

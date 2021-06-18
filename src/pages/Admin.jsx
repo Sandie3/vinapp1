@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Select from 'react-select';
 
 import AdminBookings from "../components/AdminBookings";
+import AdminBookings2 from "../components/AdminBookings2";
 import AdminWineries from "../components/AdminWineries";
 
 const customStyles = {
@@ -23,7 +24,8 @@ const customStyles = {
 }
 
 const options = [
-    { value: <AdminBookings />, label: 'View Bookings' },
+    { value: <AdminBookings2 />, label: 'View Bookings' },
+    { value: <AdminBookings />, label: 'Search Bookings' },
     { value: <AdminWineries />, label: 'Add Wineries' },
 ]
 

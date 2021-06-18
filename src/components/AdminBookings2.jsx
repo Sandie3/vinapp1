@@ -1,20 +1,15 @@
 import { useState, useEffect } from 'react'
 
-import { delBooking, searchBooking } from '../apicall/bookings'
+import { getBooking, delBooking } from '../apicall/bookings'
 
 const AdminBookings = () => {
 
     const [booking, setBooking] = useState()
-    const [search, setSearch] = useState()
     const [error, setError] = useState()
     const [message, setMessage] = useState()
 
     useEffect(() => {
-        searchBookings();
-    }, [message])
-
-    const searchBookings = () => {
-        searchBooking(search).then(data => {
+        getBooking().then(data => {
             setBooking(data)
             setError()
         }).catch(err => {
@@ -22,8 +17,7 @@ const AdminBookings = () => {
             setBooking()
             console.log(err)
         })
-    }
-
+    }, [message])
 
     const handleDelete = (bookingId) => {
         if (window.confirm("Are you sure you want to delete")) {
@@ -43,8 +37,6 @@ const AdminBookings = () => {
             {
                 booking &&
                 <>
-                    <input type="search" id="adminSearch" className="adminSearch" placeholder="Search" defaultValue={search} onChange={(e) => setSearch(e.target.value)} />
-                    <input onClick={searchBookings} type="submit" value="Search" />
                     <div className="adminBookings">
                         {
                             booking.map((b, i) => {
