@@ -20,7 +20,7 @@ const bookingScheme = new mongoose.Schema({
     bookingDate: {
         type: String,
         //default: Date.now,
-        required: true
+        required: false
     },
     message: {
         type: String,
