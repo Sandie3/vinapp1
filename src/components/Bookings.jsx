@@ -85,7 +85,7 @@ const Bookings = () => {
                     <label htmlFor="checkBooking">Are you sure you want to book this date?</label>
                 </div>
                 <div className="bookOptionSubmit">
-                    <input type="submit" id="OptionSubmit" value="Book" />
+                    <input type="submit" id="OptionSubmit" value="Book"/>
                 </div>
             </form>
         </div>
