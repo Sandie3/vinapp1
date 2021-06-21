@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react'
-
+import { Link } from 'react-router-dom'
 // Components 
 import Header from '../components/Header'
 
@@ -15,7 +14,9 @@ const Home = () => {
 
         <div className="optionBox">
             <h2>Our Wineries</h2>
-            <img src="https://i.imgur.com/Ef7QHv3.png" alt="Tilfældig Vin Mark" />
+            <Link to="/wineries">
+                <img src="https://i.imgur.com/Ef7QHv3.png" alt="Tilfældig Vin Mark" />
+            </Link>
         </div>
         
         <div className="optionBox">
