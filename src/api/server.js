@@ -12,6 +12,7 @@ const IP = 'localhost';
 app.use(cors({ credentials: true, origin: true })) // cors - Cross-Origon Resource Sharing - "Security"
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', async (req, res) => {
     console.log('Starting app...');

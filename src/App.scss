@@ -332,16 +332,26 @@ input[type="submit"] {
 }
 
 .wineryOption {
-    width: 428px;
+    width: 100%;
     height: auto;
     border-bottom: 1px solid black;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    img {
+    box-sizing: border-box;
+    .winerieImageContainer{
         margin-top: 10px;
         grid-column: 1/2;
         grid-row: 1/-1;
+        width: 100%;
+        height: 200px;
+        padding: 5px;
+        .winerieImage {
+            max-width: 100%;
+            height: 100%;
+            object-fit: cover;
+            // display: block;
+        }
     }
     .wineryOptionContent {
         width: 190px;
@@ -372,7 +382,7 @@ input[type="submit"] {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     padding: 1px;
-    img {
+    .winerieImageContainer {
         margin-top: 10px;
         grid-column: 2/-1;
         grid-row: 1/-1;
@@ -767,7 +777,7 @@ footer {
 
 // Admin
 
-.adminHeadline {
+    .adminHeadline {
     font-size: 30px;
     margin-bottom: 20px;
     margin-top: 20px;

@@ -9,7 +9,7 @@ const Bookings = () => {
     
     
     //state til svar fra api
-    const [besked, setBesked] = useState()
+    const [bookingData, setBookingData] = useState()
     const [error, setError] = useState()
     const [booking, setBooking] = useState()
     const [date, setDate] = useState(new Date());
@@ -27,13 +27,13 @@ const Bookings = () => {
         const formdata = new FormData(e.target)
 
         postBooking(formdata).then(data =>   {
-            setBesked(data);
+            setBookingData(data);
             setError(); // tøm fejlbesked, hvis der har været en fejl og fejlen nu er løst
             e.target.reset()
         }).catch(err => {
             console.log(err)
             setError("Der er sket en fejl!")
-            setBesked()
+            setBookingData()
         })
     }
 

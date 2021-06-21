@@ -63,8 +63,9 @@ const Wineries = () => {
                             let cords = [w.coordy, w.coordx]
                             return(
                                 <section className="wineryOption" key={w._id}>
-                                    <img src={"/images/" + w.image} alt="Picture of the Winery" />
-                                    <img src="/src/images/banana.jpg" alt="Picture of the Winery" />
+                                    <div className="winerieImageContainer">
+                                        <img className="winerieImage" src={"http://localhost:5001/images/" + w.image} alt="Picture of the Winery" />
+                                    </div>
                                     <div className="wineryOptionContent">
                                         <h2>Name: {w.name}</h2>
                                         <h3>Country: {w.location}</h3>
