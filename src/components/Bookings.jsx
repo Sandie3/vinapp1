@@ -87,7 +87,7 @@ const Bookings = () => {
                         {console.log(date)}
                 </div>
                 <div className="checkboxBook">
-                    <input type="checkbox" id="checkBooking" />
+                    <input type="checkbox" id="checkBooking" name="Check"/>
                     <label htmlFor="checkBooking">Are you sure you want to book this date?</label>
                 </div>
                 <div className="bookOptionSubmit">

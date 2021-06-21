@@ -29,6 +29,11 @@ const bookingScheme = new mongoose.Schema({
     winerie: {
         type: String,
         required: true
+    },
+
+    Check: {
+        type: String,
+        required: true
     }
 })
 
