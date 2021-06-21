@@ -1,31 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import {postBooking} from "../apicall/bookings"
+import { postBooking } from "../apicall/bookings"
+import { getWinerie } from "../apicall/wineries"
 
 
 const Bookings = () => {
 
-    
     
     //state til svar fra api
     const [bookingData, setBookingData] = useState()
     const [error, setError] = useState()
     const [booking, setBooking] = useState()
     const [date, setDate] = useState(new Date());
-
+    
     function onChange(nextValue) {
         setDate(nextValue);
     }
-
+    
     // Funktion som sender input til apikald (som sender til api'et)
     const handleSubmit = (e) => {
-
+        
         e.preventDefault(); // forhindrer reload af siden 
-
+        
         //pak todo ind i formdata til api
         const formdata = new FormData(e.target)
-
+        
         postBooking(formdata).then(data =>   {
             setBookingData(data);
             setError(); // tøm fejlbesked, hvis der har været en fejl og fejlen nu er løst
@@ -36,6 +36,20 @@ const Bookings = () => {
             setBookingData()
         })
     }
+
+    const [win, setWin] = useState()
+    const [errorW, setErrorW] = useState()
+
+    useEffect(() => {
+        getWinerie().then( data => {
+            setWin(data);
+            setErrorW()
+        }).catch(err => {
+            setWin()
+            setErrorW(err)
+            console.log(err)
+        })
+    }, [])
 
     const getRandomInt = (min = 0, max = 100) => {
 		return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -71,9 +85,27 @@ const Bookings = () => {
                     <input type="text" placeholder="Write your phone number..." name="phone"/><br /><br />
                     <h3>Choose winery<span>*</span>:</h3>
                     <select name="winerie" id="selectBooking">
-                        <option value="0">Winery1</option>
+                        {
+                            win &&
+                            <>
+                                {
+                                    win.map((w,i) => {
+                                        return(
+                                            <option key={i} value={w.name} >{w.name}</option>
+                                            )
+                                        })
+                                }
+                            </>
+                        }
+                        {
+                            errorW &&
+                            <>
+                                <option value="0" >{errorW}</option>
+                            </>
+                        }
+                        {/* <option value="0">Winery1</option>
                         <option value="1">Winery2</option>
-                        <option value="2">Winery3</option>
+                        <option value="2">Winery3</option> */}
                     </select><br /><br />
                 </div>
                 <div className="kalender">

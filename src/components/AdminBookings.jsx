@@ -57,7 +57,7 @@ const AdminBookings = () => {
                                         <input type="text" defaultValue={b.phone} name="phone" className="adminPhoneNR" placeholder="Phone Number" />
                                         <button className="adminEditBooking"><i className="far fa-edit fa-2x"></i></button>
                                         <button className="adminDelBooking" onClick={() => handleDelete(b._id)}><i className="fas fa-trash-alt fa-2x"></i></button>
-                                        <textarea defaultValue={b.message} name="message" className="adminMessage" ></textarea>
+                                        <input type="text" defaultValue={b.winerie} name="winerie" className="adminMessage" />
                                     </div>
                                 )
                             })
