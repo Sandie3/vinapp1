@@ -8,9 +8,7 @@ const Home = () => {
     return (
         <>
 
-
         <Header />
-        
 
         <div className="optionBox">
             <Link to="/wineries">
@@ -33,9 +31,6 @@ const Home = () => {
             </Link>
         </div>
 
-
-
-        
         </>
     )
 }

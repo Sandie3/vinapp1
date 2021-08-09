@@ -561,6 +561,20 @@ input[type="submit"] {
             font-size: 18px;
         }
     }
+
+    .message {
+        font-size: 13px; 
+        margin-top: -10px;
+      }
+      
+      .success {
+        color: #05FA5F;
+      }
+      
+      .error {
+        color: red;
+      }
+
 }
 
 /* ---- Message slut ---- */
@@ -647,8 +661,24 @@ input[type="submit"] {
             font-size: 18px;
         }
     }
-    /* ---- Booking slut ---- */
-}
+
+    .message {
+        margin-top: -10px;
+        font-size: 13px; 
+      }
+      
+      .success {
+        color: #05FA5F;
+      }
+      
+      .error {
+        color: red;
+      }
+
+ }   
+
+ /* ---- Booking slut ---- */
+
 
 /* ---- Cancel start ---- */
 
