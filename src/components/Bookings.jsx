@@ -15,7 +15,7 @@ const Bookings = () => {
     const [isValid, setIsValid] = useState(false);
     const [message, setMessage] = useState('');
 
-    const emailRegex = /\S+@\S+\.\S+/;
+    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     const validateEmail = (event) => {
         const email = event.target.value;
@@ -26,21 +26,25 @@ const Bookings = () => {
             setIsValid(false);
             setMessage('Please enter a valid email!');
         }
+        
+        if (email === '') setMessage('');
     };
+
+    
 
     function onChange(nextValue) {
         setDate(nextValue);
     }
-    
+
     // Funktion som sender input til apikald (som sender til api'et)
     const handleSubmit = (e) => {
-        
+
         e.preventDefault(); // forhindrer reload af siden 
-        
+
         //pak todo ind i formdata til api
         const formdata = new FormData(e.target)
-        
-        postBooking(formdata).then(data =>   {
+
+        postBooking(formdata).then(data => {
             setBookingData(data);
             setError(); // tøm fejlbesked, hvis der har været en fejl og fejlen nu er løst
             e.target.reset()
@@ -55,7 +59,7 @@ const Bookings = () => {
     const [errorW, setErrorW] = useState()
 
     useEffect(() => {
-        getWinerie().then( data => {
+        getWinerie().then(data => {
             setWin(data);
             setErrorW()
         }).catch(err => {
@@ -89,7 +93,10 @@ const Bookings = () => {
                     <h3>Name<span>*</span>:</h3>
                     <input type="text" placeholder="Write your name..." name="name" /><br /><br />
                     <h3>Email<span>*</span>:</h3>
-                    <input type="email" placeholder="Write your Email..." name="email" onChange={validateEmail}/><br /><br />
+                    <input type="email" placeholder="Write your Email..." name="email" onChange={validateEmail} /><br /><br />
+                    <div className={`message ${isValid ? 'success' : 'error'}`}>
+                        {message}
+                    </div>
                     <input type="text" name="booking" value={booking} style={{ display: 'none' }} /><br /><br />
                     <input type="text" name="bookingDate" value={date} style={{ display: 'none' }} /><br /><br />
 
@@ -103,11 +110,11 @@ const Bookings = () => {
                             win &&
                             <>
                                 {
-                                    win.map((w,i) => {
-                                        return(
+                                    win.map((w, i) => {
+                                        return (
                                             <option key={i} value={w.name} >{w.name}</option>
-                                            )
-                                        })
+                                        )
+                                    })
                                 }
                             </>
                         }
