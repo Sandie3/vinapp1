@@ -67,8 +67,8 @@ const Wineries = () => {
                                         <img className="winerieImage" src={"http://localhost:5001/images/" + w.image} alt="Picture of the Winery" />
                                     </div>
                                     <div className="wineryOptionContent">
-                                        <h2>Name: {w.name}</h2>
-                                        <h3>Country: {w.location}</h3>
+                                        <h2>{w.name}</h2>
+                                        <h3>{w.location}</h3>
                                         <p>{w.description}</p>
                                         <input className="findWin" type="submit" onClick={ ( e ) => { setCoords(cords); setZoom(17); setName(w.name); setLocation(w.location); } } defaultValue="See on map" />
                                     </div>
